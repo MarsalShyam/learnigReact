@@ -1,10 +1,17 @@
 body{
-    background-color: red;
+    background-color: yellowgreen;
+    color:black;
 }
 nav, ul{
     display: flex;
 }
 li{
     list-style-type: none;
-    
+}
+ul{
+    gap:34px;
+}
+nav{
+    background-color: beige;
+    padding:10px;
 }
