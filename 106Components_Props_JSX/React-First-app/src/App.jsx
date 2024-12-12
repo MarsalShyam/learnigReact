@@ -14,7 +14,7 @@ function App() {
         this is a sites main content
       </main>
 
-      <div className="cards" style={{overflow:"hidden"}}>
+      <div className="cards" >
         <Card title="Computer Network" description="It show the data transmission or communication across the networks" img="https://media.istockphoto.com/id/1488521147/photo/global-network-usa-united-states-of-america-north-america-global-business-flight-routes.webp?a=1&b=1&s=612x612&w=0&k=20&c=pkq0qStfGt-_otOwJgSz6t3Qnhy5r1yPuSDbN5KlgRY="/>
 
         <Card title="Computer Science" description="it is branch" img="https://plus.unsplash.com/premium_photo-1687572807160-b5262826e4df?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y29tcHV0ZXIlMjBzZWNpZW5jZXxlbnwwfHwwfHx8MA%3D%3D"/>
