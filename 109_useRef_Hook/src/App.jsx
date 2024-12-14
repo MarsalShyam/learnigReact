@@ -1,24 +1,21 @@
-import { useState,useEffect } from 'react'
+import { useState,useEffect,useRef } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Navbar from './components/Navbar'
 
 function App() {
   const [count, setCount] = useState(0)
-  // const [first,setFirst]=useState(0)
-  const [color,setColor]=useState(0)
 
-useEffect(()=>{
-  alert("Count was changed");
-  setColor(color+1)
-},[count])
+  const btnRef=useRef();
 
-
+  useEffect(()=>{
+    // a.current=a.current+1;
+    console.log(`First rendering..`);
+    btnRef.current.style.backgroundColor="red";
+  },[]);
 
   return ( 
     <>
-    <Navbar color="red"/>
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -29,7 +26,8 @@ useEffect(()=>{
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+
+        <button ref={btnRef}  onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
         <p>
