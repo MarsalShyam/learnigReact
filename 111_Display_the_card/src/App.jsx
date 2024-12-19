@@ -1,39 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState,useEffect } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 import Card from './components/Card'
 function App() {
-  const [count, setCount] = useState(0)
 
+    // State to hold the API data
+    const [data, setData] = useState([]);
+   
+
+    //Fetch data from API
+    useEffect(()=>{
+      fetch("https://jsonplaceholder.typicode.com/posts").then((response)=>response.json()).then((result)=>setData(result));
+    },[]);
+
+    //desplay the website
   return (
     <>
-    <div className="nav sticky top-0">
-    <Navbar/>
-    </div>
-    
-    <div className="card flex flex-col items-center md:flex-row md:flex-wrap">
-      <Card/>
-     <Card/>
-     <Card/>
-     <Card/>
-     <Card/>
-     <Card/>
-     <Card/>
-     <Card/>
-     <Card/>
-     <Card/>
-     <Card/>
-     <Card/>
+      <div className="nav sticky top-0">
+        <Navbar />
       </div>
+  
+      <div className="cards flex flex-col items-center md:flex-row md:flex-wrap">
+        {
+          data.map((item)=>(
+            <Card  key={item.id}  userId={item.userId} title={item.title} body={item.body} />
+          ))
+        }
+      </div>
+
      
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
-      
+
     </>
   )
 }
