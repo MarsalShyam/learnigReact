@@ -7,6 +7,16 @@ function App() {
     // State to hold the API data
     const [data, setData] = useState([]);
    
+    //*************creating function for fetching the data***************
+    // const fetchData=async()=>{
+    //   let a=await fetchData("https://jsonplaceholder.typicode.com/posts")
+    //   let data=await a.json();
+    //   setCard(data);
+    //   console.log(data);
+    // }
+    // useEffect(()=>{
+    //   fetchData();
+    // },[])
 
     //Fetch data from API
     useEffect(()=>{
@@ -23,9 +33,12 @@ function App() {
       <div className="cards flex flex-col items-center md:flex-row md:flex-wrap">
         {
           data.map((item)=>(
-            <Card  key={item.id}  userId={item.userId} title={item.title} body={item.body} />
+            <Card  key={item.id} id={item.id} userId={item.userId} title={item.title} body={item.body} />
           ))
         }
+        {/* {data.map((item)=>{
+          return <Card key={item.id} userId={item.userId} title={item.title} body={item.body} />
+        })} */}
       </div>
 
      
