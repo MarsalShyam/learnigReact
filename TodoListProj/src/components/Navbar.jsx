@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
 
       <>
-      <nav className='flex justify-between bg-indigo-900 text-white py-2'>
+      <nav className='flex justify-around bg-[#312e8141] text-white py-2 sticky'>
         <div className="logo">
             <span className='font-bold text-xl mx-8'>iTasks</span>
         </div>
